@@ -63,6 +63,9 @@ type KeyboardManagerType = {
   resignFirstResponder(): void;
   reloadLayoutIfNeeded(): void;
   isKeyboardShowing(): Promise<boolean>;
+  goNext(): Promise<boolean>;
+
+
 };
 
 export const KeyboardManager =

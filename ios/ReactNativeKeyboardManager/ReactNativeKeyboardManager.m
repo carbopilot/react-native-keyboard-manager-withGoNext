@@ -212,4 +212,22 @@ RCT_EXPORT_METHOD(isKeyboardShowing: (RCTPromiseResolveBlock) resolve rejecter: 
     resolve(@(isKeyboardShowing));
 }
 
+
+// Adding goNext support
+
+RCT_EXPORT_METHOD(goNext:(RCTPromiseResolveBlock)resolve rejecter:(RCTPromiseRejectBlock)reject) {
+    BOOL isNext = [[IQKeyboardManager shared] goNext];
+    if (isNext) {
+        resolve(@(YES));
+    } else {
+        resolve(@(NO));
+    }
+}
+
+/*
+RCT_EXPORT_METHOD(reloadLayoutIfNeeded) {
+    if (debugging) RCTLogInfo(@"KeyboardManager.goNext");
+    [[IQKeyboardManager shared] goNext];
+}
+*/
 @end
